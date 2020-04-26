@@ -15,15 +15,16 @@ class NewQuestion extends React.Component {
         console.log("add question")
         const { deck } = this.props.route.params
         const { question, answer } = this.state
-        createNewQuestionForDeck({
-            card: {question, answer},
-            deckName: deck.title
-        }).then ( () => {
-            //this.props.navigation.goBack()
-            //this.props.navigation.navigate('Individual Deck', { item: newDeck })
-            this.props.navigation.navigate('Decks') 
-        })
-       
+        if ( question !== "" && answer !== "") {
+            createNewQuestionForDeck({
+                card: {question, answer},
+                deckName: deck.title
+            }).then ( () => {
+                //this.props.navigation.goBack()
+                //this.props.navigation.navigate('Individual Deck', { item: newDeck })
+                this.props.navigation.navigate('Decks') 
+            })
+        }
     }
 
     render() {
