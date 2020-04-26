@@ -2,6 +2,10 @@ import React from 'react'
 import {StyleSheet, TouchableOpacity, View, Text, FlatList} from 'react-native'
 
 import { getDecks } from '../storage'
+import { setLocalNotification } from  '../notifications'
+
+
+
 
 class DeckList extends React.Component {
 
@@ -18,6 +22,7 @@ class DeckList extends React.Component {
                 this.setState({decks: result})
             }) 
         })
+        setLocalNotification()
       }
     
       componentWillUnmount() {

@@ -4,3 +4,5 @@ iexpo install react-native-gesture-handler react-native-reanimated react-native-
 
 npm install @react-navigation/bottom-tabs
 npm install @react-navigation/stack
+
+expo install expo-permissions

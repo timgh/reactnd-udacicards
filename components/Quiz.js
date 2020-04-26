@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native'
-
+import { clearLocalNotification, setLocalNotification } from '../notifications'
 
 export default class Quiz extends React.Component {
 
@@ -8,6 +8,10 @@ export default class Quiz extends React.Component {
         index: 0,
         correctAnswers: 0,
         showAnswear: false,
+    }
+
+    componentDidMount() {
+        clearLocalNotification().then(setLocalNotification)
     }
 
     startQuiz = () => {
